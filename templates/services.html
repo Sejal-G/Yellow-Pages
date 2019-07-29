@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<title>SERVICE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+#carpenter { border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#carpenter:hover {opacity: 0.7;}
+#carpenter1:hover {opacity: 0.7;}
+#carpenter2:hover {opacity: 0.7;}
+#carpenter3:hover {opacity: 0.7;}
+#carpenter4:hover {opacity: 0.7;}
+#carpenter5:hover {opacity: 0.7;}
+#carpenter6:hover {opacity: 0.7;}
+#carpenter7:hover {opacity: 0.7;}
+img{
+  width: 70%;
+  height: 70%;
+}
+</style>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#helpers" onclick="w3_close()" class="w3-bar-item w3-button">PROFESSIONALS</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <!-- <div class="w3-right w3-padding-16">Mail</div> -->
+    <div class="w3-center w3-padding-16">"At Your Service"</div>
+  </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="helpers">
+    <div class="w3-half">
+      <img id="carpenter" src="https://www.thebalancesmb.com/thmb/Dg6GrMnAsX7Jc2Ic-2wI2j-h6_Q=/3863x2578/filters:no_upscale():max_bytes(150000):strip_icc()/young-stylish-cabinet-maker-with--glasses-and-hairstyle--strong--handsome-craftsman-holding-saw-and-wood-blank-at-workplace-944613244-5af9afc2a18d9e003c17040c.jpg" alt="carpenter" style="width:50% height: 50%">
+      <h3><a href="services/userform">CARPENTER</a></h3>
+      <p>Click here to view the list of Carpenters</p>
+    </div>
+    <div class="w3-half">
+      <img id="carpenter1" src="https://uploads.hipages.com.au/categories/plumbers/plumber_authority_1-min.jpg" alt="plumber">
+      <h3><a href="services/userform ">PLUMBER</a></h3>
+      <p>Click here to view a list of Plumbers.</p>
+    </div>
+  </div>
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-half">
+      <img id="carpenter2" src="https://www.truneto.com/images/youtube-thumbnail/civil-work-mason-work.jpg" alt="mason">
+      <h3><a href="services/userform">MASON</a></h3>
+      <p>Click here to view a list of Masons.</p>
+    </div>
+    <div class="w3-half">
+      <img id="carpenter3" src="http://writesquare.com/blog/wp-content/uploads/2017/11/7717limo-driver-tip.jpg" alt="driver" style="width:60% height:60%">
+      <h3><a href="services/userform">DRIVER</a></h3>
+      <p>Click here to view a list of Drivers.</p>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16 w3-center" id="helpers2">
+    <div class="w3-half">
+      <img id="carpenter4" src="https://www.ufv.ca/media/assets/programs/facebook/Professional-cook-facebook.jpg" alt="cook" style="width:50% height: 50%">
+      <h3><a href="services/userform">COOK</a></h3>
+      <p>Click here to view the list of Cook</p>
+    </div>
+    <div class="w3-half">
+      <img id="carpenter5" src="https://the-riotact.com/wp-content/uploads/2017/11/The-Best-End-of-Lease-Cleaning-in-Canberra.jpg" alt="cleaner">
+      <h3><a href="services/userform ">CLEANER</a></h3>
+      <p>Click here to view a list of Cleaners.</p>
+    </div>
+  </div>
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-half">
+      <img id="carpenter6" src="http://www.becton.com.au/wp-content/uploads/2018/09/hume3-1.jpg" alt="electician">
+      <h3><a href="services/userform">ELECTRICIAN</a></h3>
+      <p>Click here to view a list of Electrician.</p>
+    </div>
+    <div class="w3-half">
+      <img id="carpenter7" src="https://craftassets-prod.s3.amazonaws.com/Blog/successful-nurse-practitioner.png" alt="nurse" style="width:60% height:60%">
+      <h3><a href ="servies/userform">NURSE</a></h3>
+      <p>Click here to view a list of nurse.</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">
+    <h3>About Us</h3><hr/><br/>
+    <img src="https://www.incimages.com/uploaded_files/image/970x450/getty_508062248_271641.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <div class="w3-padding-32">
+      <h4><b>Service Provider</b></h4>
+      <h6><i>Connecting People</i></h6>
+      <p>A website which connects all the helpers and people who need thier services.A common platform for several users to sign up and for the users to find the nearest service provider.</p>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+
+
+    <div class="w3-second w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Connecting People</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Helpers</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Easy</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Wingman</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Server</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Convinient</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Helping hands</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">beneficial</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Wings</span>
+      </p>
+    </div>
+  </footer>
+
+<!-- End page content -->
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>

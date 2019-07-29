@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title> SIGN UP</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <style>
+      {% block style %}
+      body {
+   background-image: url("https://image.freepik.com/free-vector/colorful-abstract-background-with-squares_1035-3033.jpg");
+   background-size: cover;
+  }
+
+      h1{
+        color: black
+      }
+
+      {% endblock style %}
+    </style>
+  </head>
+  <body>
+    {% load crispy_forms_tags %}
+    <div class='row'>
+
+      <div class="col-md-5">
+        <div class="page-header">
+          <h1>SIGN UP</h1>
+        </div>
+
+
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <form id="location-form" method="POST" action=' ' enctype='multipart/form-data' class="bla" >
+          {% csrf_token %}
+
+    <!-- {{ form.as_p }} -->
+    {{ form|crispy }}
+
+<button type="Submit">Submit</button>
+<!-- <div class="alert alert-success">
+  <strong>Success!</strong>
+</div> -->
+    </form>
+  </div>
+
+
+
+    </div>
+  </body>
+</html>

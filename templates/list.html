@@ -1,0 +1,211 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+    body {
+ background-image: url("https://wallpapercave.com/wp/Tj9X2UI.jpg");
+}
+
+
+    .topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.topnav-right {
+  float: right;
+}
+
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+
+
+/***dropdown**/
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+ .dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+</style>
+</head>
+<body>
+ <div class="topnav">
+    <div class="topnav-right">
+    <a href="../">Home</a>
+
+    <div class="dropdown">
+    <button class="dropbtn">Filter
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#r">get
+      <a href="#userloc">User-defined Location</a>
+    </div>
+  </div></a>
+      <a href="clist/filter">Filter</a>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <script>
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script> -->
+
+
+
+
+
+
+    <div class='container'>
+      {% block content %}
+
+      <h1>Helpers </h1><br/>
+      <form method='GET' action=''>
+        <input type='text' name='q' placeholder='Search Helper' value='{{ request.GET.query }}'/>
+        <input type='submit' value='Search'/>
+      </form></br>
+      <!-- <h1>ekhgveytyu</h1> -->
+      {% for obj in object_list %}
+      <div class="thumbnail">
+        <div class="caption">
+          
+          <img src="{{ obj.image.url }}" alt="Image" class=" w3-circle w3-margin-right" width="60px" style="float:left">
+
+    <h4><a href='detail'><b>{{ obj.name }}</b></a><small>{{ obj.profession }}</small></h3><br/>
+      <h4><b>Contact: </b>{{ obj.contact }}</h4><br/>
+      <h4><b>Distance: </b>{{ obj.dist }} km</h4><br/>
+    <p><h4><b>Address: </b>{{ obj.address|linebreaks|truncatechars:50 }}</p>
+   <!-- <p><a href='collab/services/detail' class=btn btn-primary" role="button"> View</a> </p> -->
+  </div>
+</div><hr/>
+      {% endfor %}
+
+      <div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <!-- <a href="?page=1">&laquo; first</a> -->
+            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+            <!-- <a href="?page={{ object_list.paginator.num_pages }}">last &raquo;</a> -->
+        {% endif %}
+    </span>
+</div>
+
+      {% endblock content %}
+
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
